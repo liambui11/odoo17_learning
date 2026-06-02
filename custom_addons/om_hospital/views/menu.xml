@@ -13,4 +13,8 @@
               name="Patients View"
               parent="menu_front_desk"
               action="action_hospital_patient_readonly"/>
+    <menuitem id="menu_appointments"
+              name="Appointments"
+              parent="menu_front_desk"
+              action="action_hospital_appointment"/>
 </odoo>
