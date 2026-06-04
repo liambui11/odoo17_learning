@@ -10,6 +10,7 @@
                 <field name="reference"/>
                 <field name="patient_id"/>
                 <field name="date_appointment" optional="show"/>
+                <field name="state" optional="show"/>
             </tree>
         </field>
     </record>
@@ -21,6 +22,13 @@
         <field name="arch"
                type="xml">
             <form string="Appointment">
+            <header>
+                <button name="action_confirm" type="object" string="Confirm" invisible="state != 'draft'"/>
+                <button name="action_ongoing" type="object" string="Ongoing" invisible="state != 'confirm'"/>
+                <button name="action_done" type="object" string="Done" invisible="state != 'ongoing'"/>
+                <button name="action_cancel" type="object" string="Cancel" invisible="state == 'done' or state == 'cancel'"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,ongoing,done"/>
+            </header>
                 <sheet>
                     <group>
                         <group>
