@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <menuitem id="menu_hospital_root"
-              name="HMS"/>
+        web_icon="om_hospital,static/description/icon.png"
+        name="HMS" />
     <menuitem id="menu_front_desk"
-              name="Front Desk"
-              parent="menu_hospital_root"/>
+        name="Front Desk"
+        parent="menu_hospital_root" />
     <menuitem id="menu_patients"
-              name="Patients"
-              parent="menu_front_desk"
-              action="action_hospital_patient"/>
+        name="Patients"
+        parent="menu_front_desk"
+        action="action_hospital_patient" />
     <menuitem id="menu_patients_readonly"
-              name="Patients View"
-              parent="menu_front_desk"
-              action="action_hospital_patient_readonly"/>
+        name="Patients View"
+        parent="menu_front_desk"
+        action="action_hospital_patient_readonly" />
     <menuitem id="menu_appointments"
-              name="Appointments"
-              parent="menu_front_desk"
-              action="action_hospital_appointment"/>
+        name="Appointments"
+        parent="menu_front_desk"
+        action="action_hospital_appointment" />
+
+    <menuitem id="menu_configuration"
+        name="Configuration"
+        sequence="100"
+        parent="menu_hospital_root" />
+    <menuitem id="menu_patient_tag"
+        name="Tags"
+        parent="menu_configuration" 
+        action="action_patient_tag"/>
+
 </odoo>

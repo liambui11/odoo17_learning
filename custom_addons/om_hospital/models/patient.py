@@ -12,3 +12,5 @@ class HospitalPatient(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
     ], string='Gender', tracking=True)
+    tag_ids = fields.Many2many('patient.tag','patient_tag_rel','patient_id','tag_id', string="Tags")
+    
